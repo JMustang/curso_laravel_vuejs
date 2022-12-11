@@ -26,3 +26,6 @@ Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'con
 
 Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs']);
 
+Route::get('/contactus/{name}', function(string $name){
+    echo 'Ola '.$name;
+});
