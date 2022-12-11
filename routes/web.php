@@ -26,3 +26,6 @@ Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'con
 
 Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs']);
 
+Route::get('/contactus/{name}/{teste?}', function(string $name, string $teste = 'Parametro nao informado'){
+    echo 'Ola '.$name.$teste;
+});
