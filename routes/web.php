@@ -17,28 +17,16 @@ use Illuminate\Support\Facades\Route;
 //     return 'HOME';
 // });
 
-Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal']);
-
 // Route::get('/', 'PrincipalController@principal');
-
-
-Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'contactUs']);
-Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs']);
-Route::get(
-    '/contactus/{name}/{categoria_id}', 
-    function(
-        string $name = 'Desconhecido',
-        int $categoria_id = 1
-    ){
-    echo 'Ola '.$name - $categoria_id;
-}
-)->where('categoria_id', '[0-9]+')->where('name', 'A-Za-z+');
-Route::get('/login', function(){return 'Login';});
+Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal'])->name('site.index');
+Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'contactUs'])->name('site.aboutus');
+Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs'])->name('site.contacts');
+Route::get('/login', function(){return 'Login';})->name('site.login');
 
 
 Route::prefix('/app')->group(function(){
-    Route::get('/customers', function(){return 'Customers';});
-    Route::get('/providers', function(){return 'Providers';});
-    Route::get('/products', function(){return 'Products';});
+    Route::get('/customers', function(){return 'Customers';})->name('site.customers');
+    Route::get('/providers', function(){return 'Providers';})->name('site.providers');
+    Route::get('/products', function(){return 'Products';})->name('site.products');
 
 });
