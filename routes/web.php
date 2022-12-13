@@ -23,9 +23,7 @@ Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal'])
 
 
 Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'contactUs']);
-
 Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs']);
-
 Route::get(
     '/contactus/{name}/{categoria_id}', 
     function(
@@ -35,3 +33,7 @@ Route::get(
     echo 'Ola '.$name - $categoria_id;
 }
 )->where('categoria_id', '[0-9]+')->where('name', 'A-Za-z+');
+Route::get('/login', function(){return 'Login';});
+Route::get('/customers', function(){return 'Customers';});
+Route::get('/providers', function(){return 'Providers';});
+Route::get('/products', function(){return 'Products';});
