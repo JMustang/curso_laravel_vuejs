@@ -34,6 +34,11 @@ Route::get(
 }
 )->where('categoria_id', '[0-9]+')->where('name', 'A-Za-z+');
 Route::get('/login', function(){return 'Login';});
-Route::get('/customers', function(){return 'Customers';});
-Route::get('/providers', function(){return 'Providers';});
-Route::get('/products', function(){return 'Products';});
+
+
+Route::prefix('/app')->group(function(){
+    Route::get('/customers', function(){return 'Customers';});
+    Route::get('/providers', function(){return 'Providers';});
+    Route::get('/products', function(){return 'Products';});
+
+});
