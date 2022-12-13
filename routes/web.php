@@ -26,6 +26,12 @@ Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'con
 
 Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs']);
 
-Route::get('/contactus/{name}/{teste?}', function(string $name, string $teste = 'Parametro nao informado'){
-    echo 'Ola '.$name.$teste;
-});
+Route::get(
+    '/contactus/{name}/{categoria_id}', 
+    function(
+        string $name = 'Desconhecido',
+        int $categoria_id = 1
+    ){
+    echo 'Ola '.$name - $categoria_id;
+}
+)->where('categoria_id', '[0-9]+')->where('name', 'A-Za-z+');
