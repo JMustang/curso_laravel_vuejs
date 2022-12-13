@@ -17,15 +17,21 @@ use Illuminate\Support\Facades\Route;
 //     return 'HOME';
 // });
 
-Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal']);
-
 // Route::get('/', 'PrincipalController@principal');
+Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal'])->name('site.index');
+Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'contactUs'])->name('site.aboutus');
+Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs'])->name('site.contacts');
+Route::get('/login', function(){return 'Login';})->name('site.login');
 
 
-Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'contactUs']);
+Route::prefix('/app')->group(function(){
+    Route::get('/customers', function(){return 'Customers';})->name('site.customers');
+    Route::get('/providers', function(){return 'Providers';})->name('site.providers');
+    Route::get('/products', function(){return 'Products';})->name('site.products');
 
-Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs']);
+});
 
-Route::get('/contactus/{name}/{teste?}', function(string $name, string $teste = 'Parametro nao informado'){
-    echo 'Ola '.$name.$teste;
+
+Route::fallback(function(){
+    echo 'A pagina acessada nao existe. <a href="'.route('site.index').'">Clique aqui</a> para voltar ao inicio.';
 });
