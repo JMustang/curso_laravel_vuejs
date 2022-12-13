@@ -30,3 +30,8 @@ Route::prefix('/app')->group(function(){
     Route::get('/products', function(){return 'Products';})->name('site.products');
 
 });
+
+
+Route::fallback(function(){
+    echo 'A pagina acessada nao existe. <a href="'.route('site.index').'">Clique aqui</a> para voltar ao inicio.';
+});
