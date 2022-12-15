@@ -31,6 +31,8 @@ Route::prefix('/app')->group(function(){
 
 });
 
+Route::get('/teste/{p1}/{p2}', [\App\Http\Controllers\TesteController::class,'teste'])->name('teste');
+
 
 Route::fallback(function(){
     echo 'A pagina acessada nao existe. <a href="'.route('site.index').'">Clique aqui</a> para voltar ao inicio.';
