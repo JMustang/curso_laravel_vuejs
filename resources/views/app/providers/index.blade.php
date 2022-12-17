@@ -22,12 +22,15 @@
 
 
 @isset($providers)
-        Fornecedor: {{ $providers[1]['name'] }}
+        Fornecedor: {{ $providers[0]['name'] }}
         <br>
-        Status: {{ $providers[1]['status'] }}
+        Status: {{ $providers[0]['status'] }}
         <br> 
-        @isset($providers[1]['cnpj'])
-                CNPJ: {{ $providers[1]['cnpj'] }}
+        @isset($providers[0]['cnpj'])
+                CNPJ: {{ $providers[0]['cnpj'] }}
+                @empty($providers[0]['cnpj'])
+                        - vazio
+                @endempty
         @endisset
         <br> 
 @endisset
