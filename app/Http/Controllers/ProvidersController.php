@@ -19,6 +19,8 @@ class ProvidersController extends Controller
                 ],
         ];
 
+        echo isset($providers[0]['cnpj']) ? 'CNPJ informado' : 'CNPJ nao informado';
+
         return view('app.providers.index', compact('providers'));
     }
 }
