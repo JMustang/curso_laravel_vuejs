@@ -21,11 +21,18 @@
 @endif --}}
 
 
+@isset($providers)
+        Fornecedor: {{ $providers[1]['name'] }}
+        <br>
+        Status: {{ $providers[1]['status'] }}
+        <br> 
+        @isset($providers[1]['cnpj'])
+                CNPJ: {{ $providers[1]['cnpj'] }}
+        @endisset
+        <br> 
+@endisset
 
-Fornecedor: {{ $providers[0]['name'] }}
-<br>
-Status: {{ $providers[0]['status'] }}
-<br>
+
 @if(!($providers[0]['status']=='S'))
         Fornecedor inativo
 @endif
