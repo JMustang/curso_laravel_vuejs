@@ -11,13 +11,15 @@ class ProvidersController extends Controller
             0 => [
             'name' => 'Fornecedor 1', 
             'status' => 'N', 
-            'cnpj' => '00.000.000/000-00'
+            'cnpj' => 'qwe'
             ],
             1 => [
                 'name' => 'Fornecedor 2', 
                 'status' => 'N', 
                 ],
         ];
+
+        echo isset($providers[0]['cnpj']) ? 'CNPJ informado' : 'CNPJ nao informado';
 
         return view('app.providers.index', compact('providers'));
     }
