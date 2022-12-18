@@ -22,7 +22,8 @@
 
 
 @isset($providers)
-        @for($i = 0; isset($providers[$i]); $i++)
+        @php $i = 0 @endphp
+        @while (isset($providers[$i]))
                 Fornecedor: {{ $providers[$i]['name'] }}
                 <br>
                 Status: {{ $providers[$i]['status'] }}
@@ -31,7 +32,8 @@
                 <br>
                 Telefone: ({{ $providers[$i]['ddd'] ?? '' }}) {{ $providers[$i]['telefone'] ?? '' }}
                 <hr>
-        @endfor
+                @php $i++ @endphp
+        @endwhile
 @endisset
 
 @if(!($providers[1]['status']=='S'))
