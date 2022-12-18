@@ -22,25 +22,19 @@
 
 
 @isset($providers)
-        Fornecedor: {{ $providers[0]['name'] }}
+        Fornecedor: {{ $providers[1]['name'] }}
         <br>
-        Status: {{ $providers[0]['status'] }}
+        Status: {{ $providers[1]['status'] }}
         <br> 
-        @isset($providers[0]['cnpj'])
-                CNPJ: {{ $providers[0]['cnpj'] }}
-                @empty($providers[0]['cnpj'])
-                        - vazio
-                @endempty
-        @endisset
-        <br> 
+        CNPJ: {{ $providers[1]['cnpj'] ?? 'Dados nao foram preenchidos' }}
 @endisset
 
 
-@if(!($providers[0]['status']=='S'))
+@if(!($providers[1]['status']=='S'))
         Fornecedor inativo
 @endif
 <br>
-@unless($providers[0]['status']=='S')
+@unless($providers[1]['status']=='S')
         Fornecedor inativo
 @endunless
 <br>
