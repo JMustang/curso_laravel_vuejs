@@ -27,6 +27,22 @@
         Status: {{ $providers[1]['status'] }}
         <br> 
         CNPJ: {{ $providers[1]['cnpj'] ?? 'Dados nao foram preenchidos' }}
+        <br>
+        Telefone: ({{ $providers[1]['ddd'] ?? '' }}) {{ $providers[1]['telefone'] ?? '' }}
+        @switch($providers[1]['ddd'])
+            @case('82')
+                Alagoas - AL
+                @break
+            @case('11')
+                Sao Paulo - SP
+                @break
+            @case('32')
+                Juiz de Fora - MG
+                @break
+            @default
+                Estado nao Informado.
+                
+        @endswitch
 @endisset
 
 
