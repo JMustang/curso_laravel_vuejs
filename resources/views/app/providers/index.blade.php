@@ -22,25 +22,25 @@
 
 
 @isset($providers)
-        Fornecedor: {{ $providers[0]['name'] }}
-        <br>
-        Status: {{ $providers[0]['status'] }}
-        <br> 
-        @isset($providers[0]['cnpj'])
-                CNPJ: {{ $providers[0]['cnpj'] }}
-                @empty($providers[0]['cnpj'])
-                        - vazio
-                @endempty
-        @endisset
-        <br> 
+        @php $i = 0 @endphp
+        @while (isset($providers[$i]))
+                Fornecedor: {{ $providers[$i]['name'] }}
+                <br>
+                Status: {{ $providers[$i]['status'] }}
+                <br> 
+                CNPJ: {{ $providers[$i]['cnpj'] ?? 'Dados nao foram preenchidos' }}
+                <br>
+                Telefone: ({{ $providers[$i]['ddd'] ?? '' }}) {{ $providers[$i]['telefone'] ?? '' }}
+                <hr>
+                @php $i++ @endphp
+        @endwhile
 @endisset
 
-
-@if(!($providers[0]['status']=='S'))
+@if(!($providers[1]['status']=='S'))
         Fornecedor inativo
 @endif
 <br>
-@unless($providers[0]['status']=='S')
+@unless($providers[1]['status']=='S')
         Fornecedor inativo
 @endunless
 <br>
