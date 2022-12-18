@@ -22,29 +22,17 @@
 
 
 @isset($providers)
-        Fornecedor: {{ $providers[1]['name'] }}
-        <br>
-        Status: {{ $providers[1]['status'] }}
-        <br> 
-        CNPJ: {{ $providers[1]['cnpj'] ?? 'Dados nao foram preenchidos' }}
-        <br>
-        Telefone: ({{ $providers[1]['ddd'] ?? '' }}) {{ $providers[1]['telefone'] ?? '' }}
-        @switch($providers[1]['ddd'])
-            @case('82')
-                Alagoas - AL
-                @break
-            @case('11')
-                Sao Paulo - SP
-                @break
-            @case('32')
-                Juiz de Fora - MG
-                @break
-            @default
-                Estado nao Informado.
-                
-        @endswitch
+        @for($i = 0; isset($providers[$i]); $i++)
+                Fornecedor: {{ $providers[$i]['name'] }}
+                <br>
+                Status: {{ $providers[$i]['status'] }}
+                <br> 
+                CNPJ: {{ $providers[$i]['cnpj'] ?? 'Dados nao foram preenchidos' }}
+                <br>
+                Telefone: ({{ $providers[$i]['ddd'] ?? '' }}) {{ $providers[$i]['telefone'] ?? '' }}
+                <hr>
+        @endfor
 @endisset
-
 
 @if(!($providers[1]['status']=='S'))
         Fornecedor inativo

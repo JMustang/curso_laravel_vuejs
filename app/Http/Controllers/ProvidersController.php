@@ -23,7 +23,7 @@ class ProvidersController extends Controller
                 'telefone' => '00000-0900'
                 ],
             2 => [
-                'name' => 'Fornecedor 2', 
+                'name' => 'Fornecedor 3', 
                 'status' => 'S', 
                 'cnpj' => 'wer23',
                 'ddd' => '32',
