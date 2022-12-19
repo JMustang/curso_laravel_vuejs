@@ -25,11 +25,11 @@
         @forelse($providers as $indece => $provider)
                 Fornecedor: {{ $provider['name'] }}
                 <br>
-                Status: {{ $provider['status'] }}
+                Status: @{{ $provider['status'] }}
                 <br> 
-                CNPJ: {{ $provider['cnpj'] ?? 'Dados nao foram preenchidos' }}
+                CNPJ: @{{ $provider['cnpj'] ?? 'Dados nao foram preenchidos' }}
                 <br>
-                Telefone: ({{ $provider['ddd'] ?? '' }}) {{ $provider['telefone'] ?? '' }}
+                Telefone: @({{ $provider['ddd'] ?? '' }}) {{ $provider['telefone'] ?? '' }}
                 <hr>
         @empty
                 Nao existe fornecedores cadastrados!!
