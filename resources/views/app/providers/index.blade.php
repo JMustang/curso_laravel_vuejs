@@ -22,25 +22,17 @@
 
 
 @isset($providers)
-        @php $i = 0 @endphp
-        @while (isset($providers[$i]))
-                Fornecedor: {{ $providers[$i]['name'] }}
+        @forelse($providers as $indece => $provider)
+                Fornecedor: {{ $provider['name'] }}
                 <br>
-                Status: {{ $providers[$i]['status'] }}
+                Status: @{{ $provider['status'] }}
                 <br> 
-                CNPJ: {{ $providers[$i]['cnpj'] ?? 'Dados nao foram preenchidos' }}
+                CNPJ: @{{ $provider['cnpj'] ?? 'Dados nao foram preenchidos' }}
                 <br>
-                Telefone: ({{ $providers[$i]['ddd'] ?? '' }}) {{ $providers[$i]['telefone'] ?? '' }}
+                Telefone: @({{ $provider['ddd'] ?? '' }}) {{ $provider['telefone'] ?? '' }}
                 <hr>
-                @php $i++ @endphp
-        @endwhile
+        @empty
+                Nao existe fornecedores cadastrados!!
+        @endforelse
 @endisset
 
-@if(!($providers[1]['status']=='S'))
-        Fornecedor inativo
-@endif
-<br>
-@unless($providers[1]['status']=='S')
-        Fornecedor inativo
-@endunless
-<br>
