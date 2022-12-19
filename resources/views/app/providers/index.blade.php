@@ -22,7 +22,7 @@
 
 
 @isset($providers)
-        @foreach($providers as $indece => $provider)
+        @forelse($providers as $indece => $provider)
                 Fornecedor: {{ $provider['name'] }}
                 <br>
                 Status: {{ $provider['status'] }}
@@ -31,14 +31,8 @@
                 <br>
                 Telefone: ({{ $provider['ddd'] ?? '' }}) {{ $provider['telefone'] ?? '' }}
                 <hr>
-        @endforeach
+        @empty
+                Nao existe fornecedores cadastrados!!
+        @endforelse
 @endisset
 
-@if(!($providers[1]['status']=='S'))
-        Fornecedor inativo
-@endif
-<br>
-@unless($providers[1]['status']=='S')
-        Fornecedor inativo
-@endunless
-<br>

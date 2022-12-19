@@ -31,6 +31,7 @@ class ProvidersController extends Controller
                 ],
         ];
 
+
         return view('app.providers.index', compact('providers'));
     }
 }
