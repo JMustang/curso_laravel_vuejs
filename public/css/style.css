@@ -7,7 +7,7 @@ body {
 
 p,
 span {
-    color: #ffffff;
+    color: #000000;
 }
 
 h1 {
@@ -16,7 +16,7 @@ h1 {
 }
 
 h2 {
-    color: #ffffff;
+    color: #000000;
     font-size: 22px;
 }
 
@@ -38,11 +38,11 @@ button {
 }
 
 .borda-branca {
-    border: solid 1px #fff;
+    border: solid 1px rgb(255, 255, 255);
 }
 
 .borda-preta {
-    border: solid 1px rgb(255, 255, 255);
+    border: solid 1px rgb(0, 0, 0);
 }
 
 button {
@@ -170,7 +170,7 @@ button:hover {
 }
 
 .informacao-pagina p {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .rodape {
@@ -181,10 +181,10 @@ button:hover {
 .area-contato,
 .localizacao {
     width: 33.333%;
-    border-top: solid 1px rgb(255, 255, 255);
+    border-top: solid 1px rgb(0, 0, 0);
     float: left;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #7a7878;
     height: 250px;
 }
 
