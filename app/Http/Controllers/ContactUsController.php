@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 class ContactUsController extends Controller
 {
     public function contactUs(){
+
+        var_dump($_GET);
         return view('site.contactUs');
     }
 }
