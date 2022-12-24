@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    @include('site.layouts._partials.header')
     @yield('content')
 </body>
 
