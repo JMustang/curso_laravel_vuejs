@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', 'PrincipalController@principal');
 Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal'])->name('site.index');
 Route::get('/contactus', [\App\Http\Controllers\ContactUsController::class, 'contactUs'])->name('site.contacts');
+Route::post('/contactus', [\App\Http\Controllers\ContactUsController::class, 'contactUs'])->name('site.contacts');
 Route::get('/aboutus', [\App\Http\Controllers\AboutUsController::class, 'aboutUs'])->name('site.aboutus');
 Route::get('/login', function(){return 'Login';})->name('site.login');
 
