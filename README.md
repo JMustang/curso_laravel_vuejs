@@ -11,3 +11,10 @@ php artisan make:controller NomeDoController
 php artisan make:model NomeDoModel -m
 ```
 - A flag "**-m**" cria a **migration** do model que foi criado.
+
+
+
+
+
+<!-- Resolvi um, apareceu outro no drive do mysql
+amanha tento resolver -->
