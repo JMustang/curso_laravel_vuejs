@@ -17,4 +17,9 @@ php artisan make:model NomeDoModel -m
 
 
 <!-- Resolvi um, apareceu outro no drive do mysql
-amanha tento resolver -->
+amanha tento resolver 
+
+
+Error: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+Desconheco esse erro, vou pesquisar amanha
+-->
